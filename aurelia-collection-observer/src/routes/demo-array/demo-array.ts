@@ -1,4 +1,5 @@
 import { BindingEngine, autoinject } from 'aurelia-framework';
+import {IArrayObserverSplice} from 'aurelia-binding';
 
 @autoinject
 export class DemoArray {
@@ -10,9 +11,9 @@ export class DemoArray {
       .subscribe(this.collectionChanged.bind(this));
   }
 
-  collectionChanged(splices: Array<ICollectionObserverSplice<string>>) {
+  collectionChanged(splices: Array<IArrayObserverSplice<string>>) {
     for (var i = 0; i < splices.length; i++) {
-      var splice: ICollectionObserverSplice<string> = splices[i];
+      var splice: IArrayObserverSplice<string> = splices[i];
 
       // Output the values that were added.
       var valuesAdded = this.myCollection.slice(splice.index, splice.index + splice.addedCount);

@@ -1,4 +1,5 @@
 import {BindingEngine, autoinject} from 'aurelia-framework';
+import {IMapObserverSplice} from 'aurelia-binding';
 
 @autoinject
 export class DemoMap {
@@ -28,9 +29,9 @@ export class DemoMap {
     this.myCollection.delete(lastKey);
   }
 
-  collectionChanged(splices: Array<IMapCollectionObserverSplice<number, string>>) {
+  collectionChanged(splices: Array<IMapObserverSplice<number, string>>) {
     for (var i = 0; i < splices.length; i++) {
-      var splice: IMapCollectionObserverSplice<number, string> = splices[i];
+      var splice: IMapObserverSplice<number, string> = splices[i];
 
       if(splice.type == "add"){
         // Tell us what values were added.
