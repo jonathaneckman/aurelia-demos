@@ -26,6 +26,11 @@ export class App {
         route: 'demo-array',
         name: 'demo-array',
         moduleId: PLATFORM.moduleName('./routes/demo-array/demo-array'),
+      },
+      {
+        route: 'demo-set',
+        name: 'demo-set',
+        moduleId: PLATFORM.moduleName('./routes/demo-set/demo-set'),
       }
     ]
     );
