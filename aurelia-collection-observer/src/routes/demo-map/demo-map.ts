@@ -1,5 +1,5 @@
-import {BindingEngine, autoinject} from 'aurelia-framework';
-import {IMapObserverSplice} from 'aurelia-binding';
+import {autoinject} from 'aurelia-framework';
+import {BindingEngine, IMapObserverSplice} from 'aurelia-binding';
 
 @autoinject
 export class DemoMap {

@@ -1,5 +1,5 @@
-import { BindingEngine, autoinject } from 'aurelia-framework';
-import {IArrayObserverSplice} from 'aurelia-binding';
+import {autoinject } from 'aurelia-framework';
+import {BindingEngine, IArrayObserverSplice} from 'aurelia-binding';
 
 @autoinject
 export class DemoArray {

@@ -1,5 +1,5 @@
-import {BindingEngine, autoinject} from 'aurelia-framework';
-import {ISetObserverSplice} from 'aurelia-binding';
+import {autoinject} from 'aurelia-framework';
+import {BindingEngine, ISetObserverSplice} from 'aurelia-binding';
 
 @autoinject
 export class DemoSet {
@@ -24,10 +24,10 @@ export class DemoSet {
     this.myCollection.delete(lastKey);
   }
 
-  collectionChanged(splices: Array<IMapObserverSplice<number, string>>) {
+  collectionChanged(splices: Array<ISetObserverSplice<number>>) {
     debugger;
     for (var i = 0; i < splices.length; i++) {
-      var splice: IMapObserverSplice<number, string> = splices[i];
+      var splice: ISetObserverSplice<number> = splices[i];
 
       // if(splice.type == "add"){
       //   // Tell us what values were added.

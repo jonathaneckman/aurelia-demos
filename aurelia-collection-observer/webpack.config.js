@@ -26,7 +26,8 @@ const cssRules = [
 module.exports = ({production, server, extractCss, coverage} = {}) => ({
   resolve: {
     extensions: ['.ts', '.js'],
-    modules: [srcDir, 'node_modules'],
+    symlinks: false,
+    modules: [srcDir, path.resolve('node_modules')],
   },
   entry: {
     app: ['aurelia-bootstrapper'],
