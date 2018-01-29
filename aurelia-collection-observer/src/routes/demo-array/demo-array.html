@@ -1,5 +1,8 @@
 <template>
-  <h1>Array</h1>
-  <button click.delegate="addItems()">Add Items</button>
-  <button click.delegate="removeItems()">Remove Items</button>
+    <ux-grid class="demo-grid">
+        <ux-grid-cell xs="12">
+            <ux-button click.delegate="addItems()">Add Items</ux-button>
+            <ux-button click.delegate="removeItems()">Remove Items</ux-button>
+        </ux-grid-cell>
+      </ux-grid>
 </template>

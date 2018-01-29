@@ -1,3 +1,31 @@
 <template>
-  <router-view></router-view>
+    <require from="./app.scss"></require>
+
+  <ux-drawer type="permanent">
+    <header>
+      <h1><a class="brand" href="#/home">Aurelia Demos</a></h1>
+    </header>
+
+    <ux-list class="drawer-menu">
+      <div class="ux-list-item ${nav.isActive ? 'active' : ''}" repeat.for="nav of router.navigation">
+        <a class="list-content" href.bind="nav.href">
+          ${nav.title}
+        </a>
+      </div>
+    </ux-list>
+  </ux-drawer>
+
+  <main>
+      <ux-toolbar>
+        <div class="toolbar-row">
+          <span class="title">
+            ${router.currentInstruction.config.navModel.title}
+          </span>
+        </div>
+      </ux-toolbar>
+  
+      <router-view class="page"></router-view>
+    </main>
+
+
 </template>
