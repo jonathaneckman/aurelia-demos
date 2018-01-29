@@ -1,3 +1,4 @@
+import { GitHubFileLoader } from './../../services/github-file-loader';
 import {autoinject} from 'aurelia-framework';
 import {BindingEngine, ISetObserverSplice} from 'aurelia-binding';
 
@@ -5,13 +6,18 @@ import {BindingEngine, ISetObserverSplice} from 'aurelia-binding';
 export class DemoSet {
 
   myCollection: Set<number> = new Set<number>();
+  example: string = '';
 
-  constructor(private bindingEngine: BindingEngine) {
+  constructor(private bindingEngine: BindingEngine, private githubLoader: GitHubFileLoader) {
 
     let subscription = this.bindingEngine.collectionObserver(this.myCollection)
       .subscribe(this.collectionChanged.bind(this));
-
   }
+
+  async activate(){
+    this.example = await this.githubLoader.getFileContents('/aurelia-collection-observer/src/routes/demo-set/demo-set.ts');
+  }
+
 
   addItems() {
     var nextKey = this.myCollection.size;

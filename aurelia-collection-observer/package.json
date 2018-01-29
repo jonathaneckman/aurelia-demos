@@ -14,6 +14,7 @@
     "aurelia-animator-css": "^1.0.2",
     "aurelia-binding": "https://github.com/jonathaneckman/binding/tarball/demo",
     "aurelia-bootstrapper": "^2.1.1",
+    "aurelia-fetch-client": "^1.3.0",
     "aurelia-polyfills": "latest",
     "bluebird": "^3.4.1",
     "prismjs": "^1.10.0"
