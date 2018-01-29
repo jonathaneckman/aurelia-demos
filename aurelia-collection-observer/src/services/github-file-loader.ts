@@ -6,7 +6,6 @@ export class GitHubFileLoader {
   public httpClient: HttpClient;
 
     constructor(httpClient: HttpClient) {
-      //https://api.github.com/repos/jonathaneckman/demos/contents/aurelia-collection-observer/src/routes/demo-set/demo-set.ts
         this.httpClient = httpClient.configure(config => {
             config
                 .useStandardConfiguration()
