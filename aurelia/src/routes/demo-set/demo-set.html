@@ -1,12 +1,8 @@
 <template>
-    <ux-grid class="demo-grid">
-        <ux-grid-cell xs="12">
-          <ux-button click.delegate="addItems()">Add Items</ux-button>
-          <ux-button click.delegate="removeItems()">Remove Items</ux-button>
-        </ux-grid-cell>
-      </ux-grid>
+    <require from="./demo-set-code/demo-set-code"></require>
 
-      <console logs.bind="logs"></console>
-
-      <code-block type="typescript">${example}</code-block>
+    <demo-set-code logs.bind="logs"></demo-set-code>
+    <console logs.bind="logs"></console>
+    <code-block type="typescript">${example}</code-block>
+    
 </template>
