@@ -1,0 +1,21 @@
+tab-headers  ul{
+  margin: 5px 0;
+  padding: 5px 0;
+}
+
+tab-headers .tab-header {
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  color: var(--ux-theme--button-background-disabled, #9E9E9E);
+}
+
+tab-headers .tab-header:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+tab-headers .tab-header[data-active=true] {
+  color: #000;
+  border-bottom: 4px solid var(--ux-theme--button-background, var(--ux-design--primary, #3F51B5));
+}

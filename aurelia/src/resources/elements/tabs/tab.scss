@@ -1,0 +1,8 @@
+tab {
+  width: 100%;
+  display: none;
+}
+
+tab[data-active=true] {
+  display: block;
+}

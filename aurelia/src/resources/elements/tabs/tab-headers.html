@@ -1,0 +1,9 @@
+<template>
+  <require from="./tab-headers.scss"></require>
+
+  <ul>
+    <li class="tab-header" repeat.for="tab of tabs" data-id="$index" click.delegate="changeTab(tab)" data-active.bind="tab.active ? true : false">
+      <span title="${tab.label}">${tab.label}</span>
+    </li>
+  </ul>
+</template>

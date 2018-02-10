@@ -1,0 +1,10 @@
+<template>
+  <tab-headers tabs.bind="tabs"></tab-headers>
+
+  <tab repeat.for="tab of tabs" tab.bind="tab">
+    <template replace-part="content">
+      <code-block type="typescript">${tab.content}</code-block>
+    </template>
+  </tab>
+
+  <template>

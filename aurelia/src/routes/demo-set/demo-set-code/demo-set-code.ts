@@ -7,10 +7,10 @@ export class DemoSetCode {
 
   @bindable
   logs: string[] = [];
+  
   myCollection: Set<number> = new Set<number>();
 
   constructor(private bindingEngine: BindingEngine) {
-
     let subscription = this.bindingEngine.collectionObserver(this.myCollection)
       .subscribe(this.collectionChanged.bind(this));
   }
