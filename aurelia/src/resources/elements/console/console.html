@@ -1,0 +1,11 @@
+<template>
+  <require from="./console.scss"></require>
+
+  <div class="console-output">
+    <div>
+        <template repeat.for="log of logs">
+            <p>&gt; ${log}</p>
+          </template>
+    </div>
+  </div>
+</template>

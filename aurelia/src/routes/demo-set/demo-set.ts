@@ -5,6 +5,7 @@ import {BindingEngine, ISetObserverSplice} from 'aurelia-binding';
 @autoinject
 export class DemoSet {
 
+  logs: string[] = [];
   myCollection: Set<number> = new Set<number>();
   example: string = '';
 
@@ -36,12 +37,12 @@ export class DemoSet {
 
       if(splice.type == "add"){
         // Tell us what values were added.
-        console.log(`'${splice.value}' was added to the set`);
+        this.logs.push(`'${splice.value}' was added to the set`);
       }
 
       if(splice.type == "delete"){
         // Tell us what values were removed.
-        console.log(`'${splice.value}' was removed from the set`);
+        this.logs.push(`'${splice.value}' was removed from the set`);
       }
      
     }
