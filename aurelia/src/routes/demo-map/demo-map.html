@@ -1,9 +1,8 @@
 <template>
-  <ux-grid class="demo-grid">
-    <ux-grid-cell xs="12">
-      <ux-button click.delegate="addItems()">Add Items</ux-button>
-      <ux-button click.delegate="changeItems()">Change Items</ux-button>
-      <ux-button click.delegate="removeItems()">Remove Items</ux-button>
-    </ux-grid-cell>
-  </ux-grid>
+  <require from="./demo-map-code/demo-map-code"></require>
+
+  <demo-map-code logs.bind="logs"></demo-set-code>
+    <console logs.bind="logs"></console>
+    <code-file-host file-paths.bind="filePaths"></code-file-host>
+
 </template>
