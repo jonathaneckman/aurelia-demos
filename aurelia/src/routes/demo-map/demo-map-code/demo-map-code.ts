@@ -1,5 +1,5 @@
 import { autoinject } from 'aurelia-framework';
-import { BindingEngine, IMapObserverSplice } from 'aurelia-binding';
+import { BindingEngine, IMapObserverSplice, Disposable } from 'aurelia-binding';
 import { bindable } from 'aurelia-templating';
 
 @autoinject
@@ -9,12 +9,17 @@ export class DemoMapCode {
   logs: string[] = [];
 
   myCollection: Map<number, string> = new Map<number, string>();
+  subscription: Disposable;
 
-  constructor(private bindingEngine: BindingEngine) {
+  constructor(private bindingEngine: BindingEngine) { }
 
-    let subscription = this.bindingEngine.collectionObserver(this.myCollection)
+  attached() {
+    this.subscription = this.bindingEngine.collectionObserver(this.myCollection)
       .subscribe(this.collectionChanged.bind(this));
+  }
 
+  detached() {
+    this.subscription.dispose();
   }
 
   addItems() {

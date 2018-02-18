@@ -1,5 +1,5 @@
 import { autoinject } from 'aurelia-framework';
-import { BindingEngine, IArrayObserverSplice } from 'aurelia-binding';
+import { BindingEngine, IArrayObserverSplice, Disposable } from 'aurelia-binding';
 import { bindable } from 'aurelia-templating';
 
 @autoinject
@@ -9,10 +9,17 @@ export class DemoArrayCode {
   logs: string[] = [];
 
   myCollection: Array<string> = ["foo"];
+  subscription: Disposable;
 
-  constructor(private bindingEngine: BindingEngine) {
-    let subscription = this.bindingEngine.collectionObserver(this.myCollection)
+  constructor(private bindingEngine: BindingEngine) { }
+
+  attached() {
+    this.subscription = this.bindingEngine.collectionObserver(this.myCollection)
       .subscribe(this.collectionChanged.bind(this));
+  }
+
+  detached() {
+    this.subscription.dispose();
   }
 
   collectionChanged(splices: Array<IArrayObserverSplice<string>>) {
