@@ -11,6 +11,7 @@ export class App {
   configureRouter(config: RouterConfiguration, router: Router) {
     this.router = router;
 
+    config.options.root = '/aurelia';
     config.options.pushState = true;
     config.title = 'Collection Observer Demo';
     config.map([
